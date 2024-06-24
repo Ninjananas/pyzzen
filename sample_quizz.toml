@@ -1,0 +1,77 @@
+name = "Sample Quizz"
+
+#####################
+# Simple Question (Good answer = 1 point)
+#####################
+[[questions]]
+question = "How much is 2+2?"
+[[questions.answers]]
+answer = "2"
+good = false
+
+[[questions.answers]]
+answer = "4"
+good = true
+
+[[questions.answers]] # Wrong answer, "good = false" is optional
+answer = "22"
+
+
+#####################
+# Question with a factor (Good answer = 3 points)
+#####################
+[[questions]]
+question = """In the following code:
+
+<pre><code>def foo(a, b):
+  return a + b</code></pre>
+
+What does <code>foo(10, 12)</code> return?
+"""
+score_factor = 3
+[[questions.answers]]
+answer = "23"
+
+[[questions.answers]]
+answer = "22"
+good = true
+
+[[questions.answers]]
+answer = "1234"
+
+
+#####################
+# Question with manually defined value per answer
+#####################
+[[questions]]
+question = "A carrot is..."
+[[questions.answers]]
+answer = "a vegetable"
+value = 1
+
+[[questions.answers]]
+answer = "a fruit"
+value = 0
+
+[[questions.answers]]
+answer = "meat"
+value = -1
+
+
+#####################
+# Question with maths (compatible with LaTex notation) (Thanks to MathJax)
+#####################
+[[questions]]
+question = '''
+When \(a \ne 0\), there are 2 distinct solutions to the equation \(ax^2 + bx + c = 0\) :
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+'''
+[[questions.answers]]
+answer = "true"
+
+[[questions.answers]]
+answer = "false"
+good = true
+
+[[questions.answers]]
+answer = "maybe"
